@@ -1,3 +1,6 @@
+// load renderfile module
+const renderFile = require('./renderfile');
+
 // create method to handle request 
 function requestHandler(request, response){
 
@@ -7,9 +10,7 @@ function requestHandler(request, response){
     // select route
     switch (url) {
         case "/":
-            response.statusCode = 200;
-            response.write('Hello World');  
-            response.end();       
+            renderFile('index.html', response);
             break;
         case "/about":
             response.statusCode = 200;
