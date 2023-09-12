@@ -12,11 +12,9 @@ function requestHandler(request, response){
         case "/":
             renderFile('index.html', response);
             break;
-        case "/about":
-            response.statusCode = 200;
-            response.write('This is my own page');
-            response.end();
-            break; 
+        case "/create":
+            renderFile('create-post.html', response);
+            break;
         default:
             response.statusCode = 404;
             response.write('The page was not found');
